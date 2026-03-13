@@ -1,5 +1,5 @@
 # Here I hope to implemebt Linear Regression model without importing any function from sklearn library. I will use the formula of Linear Regression to calculate the slope and intercept.
-
+import math
 # Ideal Dataset with no outliers and perfect linear relationship between X and Y
 # Study_Hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Scores = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]
@@ -44,7 +44,7 @@ for i in range(len(Study_Hours)):
 MSE = Sum_of_squared_residuals / len(Study_Hours)
 print("Mean Squared Error:", MSE)
 
-# Addinf Mean Absolute Error to evaluate the model
+# Adding Mean Absolute Error to evaluate the model
 # Formula for Mean Absolute Error: MAE = sum(|yI - y_predicted|) / n
 Sum_of_absolute_residuals = 0
 for i in range(len(Study_Hours)):
@@ -52,3 +52,31 @@ for i in range(len(Study_Hours)):
 
 MAE = Sum_of_absolute_residuals / len(Study_Hours)
 print("Mean Absolute Error:", MAE)
+
+# Adding Root Mean Squared Error, Coefficient of Determination, and Adjusted R squared Error to evaluate the model
+
+# Root Mean Squared Error
+# Formula for Root Mean Squared Error: RMSE = sqrt(sum((yI - y_predicted)^2) / n)
+
+RMSE = math.sqrt(Sum_of_squared_residuals / len(Study_Hours)) # or simply do RMSE = math.sqrt(MSE) or RMSE = MSE ** 0.5 
+
+print("Root Mean Squared Error:", RMSE)
+
+# Coefficient of Determination
+# Formula for Coefficient of Determination: R^2 = 1 - (sum((yI - y_predicted)^2) / sum((yI - mean_y)^2)) or as simply R^2 = 1 - (RSS / TSS)
+
+Sum_of_squares = 0
+for i in range(len(Study_Hours)):
+    Sum_of_squares += (Scores[i] - mean_y) ** 2
+
+R_squared = 1 - (Sum_of_squared_residuals / Sum_of_squares)
+print("Coefficient of Determination (R^2):", R_squared)
+
+# Adjusted R squared Error
+# Formula for Adjusted R squared Error: Adjusted R^2 = 1 - (1 - R^2) * (n - 1) / (n - k - 1)
+
+n = len(Study_Hours) # number of observations
+k = 1 # number of independent variables
+
+Adjusted_R_squared = 1 - ((1 - R_squared)*(n - 1)) / (n - k - 1)
+print("Adjusted R squared Error:", Adjusted_R_squared)
