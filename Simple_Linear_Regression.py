@@ -2,7 +2,7 @@
 
 from sklearn.linear_model import LinearRegression
 import numpy as np
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 # Ideal Dataset with no outliers and perfect linear relationship between X and Y
 # Study_Hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Scores = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]
@@ -25,3 +25,7 @@ print("Predicted Scores:", predicted_scores)
 # Adding Mean Squared Error to evaluate the model
 MSE = mean_squared_error(y, predicted_scores)
 print("Mean Squared Error:", MSE)
+
+# Adding Mean Absolute Error to evaluate the model
+MAE = mean_absolute_error(y, predicted_scores)
+print("Mean Absolute Error:", MAE)

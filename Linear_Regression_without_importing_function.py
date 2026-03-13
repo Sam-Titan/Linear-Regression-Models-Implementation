@@ -40,6 +40,15 @@ print("Comparing with the actual scores:", Scores)
 Sum_of_squared_residuals = 0
 for i in range(len(Study_Hours)):
     Sum_of_squared_residuals += (Scores[i] - predicted_scores[i])**2
-    
+
 MSE = Sum_of_squared_residuals / len(Study_Hours)
 print("Mean Squared Error:", MSE)
+
+# Addinf Mean Absolute Error to evaluate the model
+# Formula for Mean Absolute Error: MAE = sum(|yI - y_predicted|) / n
+Sum_of_absolute_residuals = 0
+for i in range(len(Study_Hours)):
+    Sum_of_absolute_residuals += abs(Scores[i] - predicted_scores[i])
+
+MAE = Sum_of_absolute_residuals / len(Study_Hours)
+print("Mean Absolute Error:", MAE)
