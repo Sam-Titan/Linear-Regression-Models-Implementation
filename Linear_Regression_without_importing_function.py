@@ -34,3 +34,12 @@ for i in range(len(Study_Hours)):
 
 print("Predicted Scores:", predicted_scores)
 print("Comparing with the actual scores:", Scores)
+
+# Adding Mean Squared Error to evaluate the model
+# Formula for Mean Squared Error: MSE = sum((yI - y_predicted)^2) / n
+Sum_of_squared_residuals = 0
+for i in range(len(Study_Hours)):
+    Sum_of_squared_residuals += (Scores[i] - predicted_scores[i])**2
+    
+MSE = Sum_of_squared_residuals / len(Study_Hours)
+print("Mean Squared Error:", MSE)
