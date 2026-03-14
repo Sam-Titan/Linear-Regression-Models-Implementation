@@ -17,9 +17,13 @@ Y_pred = model.predict(X)
 
 Slope = model.coef_[0][0]
 Intercept = model.intercept_[0]
+
 # Printing the slope and intercept of the regression line
 print("Slope (Coefficient):", Slope)
 print("Intercept:", Intercept)
+
+# Printing the predicted values
+print("Predicted values:", Y_pred.flatten())
 
 # Evaluating the model using various metrics
 MSE = mean_squared_error(Y, Y_pred)
