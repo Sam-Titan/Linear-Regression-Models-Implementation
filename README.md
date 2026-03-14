@@ -10,6 +10,8 @@ Here I have made three files with different Approaches to Linear Regression:
 Below are the results alongside the graphs 
 
 1. Linear Regression using Mathamatical Formulas
+
+# I am using Least Squares Method to calculate the Linear Model relationship between Independent Variable and Dependant Variable.
 Results:
 Slope (Coefficient): 19.0
 Intercept: 3.799999999999997

@@ -1,4 +1,4 @@
-# Here qe will be implementing Linear Regression model with a randomly generated dataset.
+# Here I will be implementing Linear Regression model with a randomly generated dataset.
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
