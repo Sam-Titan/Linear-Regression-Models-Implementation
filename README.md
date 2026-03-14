@@ -40,6 +40,7 @@ Adjusted R squared Error: 0.9951742404921322
 The graph for the same can be found in the repo under the name:
 
 **Linear_Regression_Noise_Outliers_Using_Mathamatical_Formulas**
+![Linear Regression Graph](Linear_Regression_Noise_Outlier_Using_Mathamatical_Formulas.png)
 ---
 
 ## 2. Linear Regression using sklearn
@@ -64,6 +65,7 @@ Adjusted R squared Error: 0.99716915592297
 The graph for the same can be found in the repo under the name:
 
 **Linear_Regression_Noise_Outliers_Graph**
+![Linear Regression Graph](Linear_Regression_Noise_Outlier_Graph.png)
 
 ##### Here you can see despite the both the approaches using the same dataset, the output is slightly different. This is because Approach 1 is only using Formulas while Approach uses different implementation details. These can include Optimized Formulas, Different Intercept Handling, and others.
 
@@ -99,3 +101,4 @@ Adjusted R squared Error: 0.9667030107894814
 The graph for the same can be found in the repo under the name:
 
 **Linear_Regression_Random_Dataset_Graph**
+![Linear Regression Graph](Linear_Regression_Random_Dataset_Graph.png)
