@@ -1,5 +1,6 @@
 # Here instead of implementing the Linear Regression model without importing any function from sklearn library, I will use the LinearRegression class from sklearn library to fit the model and make predictions.
 
+import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, root_mean_squared_error, r2_score
@@ -18,8 +19,10 @@ model = LinearRegression()
 model.fit(X, y)
 
 predicted_scores = model.predict(X)
-print("Slope (Coefficient):", model.coef_[0])
-print("Intercept:", model.intercept_)
+Slope = model.coef_[0]
+Intercept = model.intercept_
+print("Slope (Coefficient):", Slope)
+print("Intercept:", Intercept)
 print("Predicted Scores:", predicted_scores)
 
 # Adding Mean Squared Error to evaluate the model
@@ -46,3 +49,21 @@ k = 1  # number of independent variables
 
 Adjusted_R2 = 1 - (1 - R2) * (n - 1) / (n - k - 1)
 print("Adjusted R squared Error:", Adjusted_R2)
+
+
+plt.figure(figsize=(8,6)) 
+plt.scatter(X, y, color='blue', label='Data Points') 
+plt.plot(X, predicted_scores, color='red', linewidth=2, label='Regression Line') 
+plt.title('Linear Regression on Dataset with Noise and Outliers using imported functions')
+plt.xlabel('X')
+plt.ylabel('Y')
+# Add metrics as text on the graph
+plt.text(0.05, 0.95, 
+         f'Slope: {Slope:.3f}\nIntercept: {Intercept:.3f}\nMSE: {MSE:.3f}\nMAE: {MAE:.3f}\nRMSE: {RMSE:.3f}\nR²: {R2:.3f}\nAdjusted R²: {Adjusted_R2:.3f}', 
+         transform=plt.gca().transAxes, 
+         fontsize=12, 
+         verticalalignment='top', 
+         bbox=dict(facecolor='white', alpha=0.6))
+plt.legend()
+plt.grid(True)
+plt.show()

@@ -1,5 +1,8 @@
 # Here I hope to implemebt Linear Regression model without importing any function from sklearn library. I will use the formula of Linear Regression to calculate the slope and intercept.
+
 import math
+import matplotlib.pyplot as plt
+
 # Ideal Dataset with no outliers and perfect linear relationship between X and Y
 # Study_Hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # Scores = [20, 40, 60, 80, 100, 120, 140, 160, 180, 200]
@@ -80,3 +83,20 @@ k = 1 # number of independent variables
 
 Adjusted_R_squared = 1 - ((1 - R_squared)*(n - 1)) / (n - k - 1)
 print("Adjusted R squared Error:", Adjusted_R_squared)
+
+plt.figure(figsize=(8,6)) 
+plt.scatter(Study_Hours, Scores, color='blue', label='Data Points') 
+plt.plot(Study_Hours, predicted_scores, color='red', linewidth=2, label='Regression Line') 
+plt.title('Linear Regression on Dataset with Noise and Outliers using Mathamatical Formulas')
+plt.xlabel('X')
+plt.ylabel('Y')
+# Add metrics as text on the graph
+plt.text(0.05, 0.95, 
+         f'Slope: {m:.3f}\nIntercept: {c:.3f}\nMSE: {MSE:.3f}\nMAE: {MAE:.3f}\nRMSE: {RMSE:.3f}\nR²: {R_squared:.3f}\nAdjusted R²: {Adjusted_R_squared:.3f}', 
+         transform=plt.gca().transAxes, 
+         fontsize=12, 
+         verticalalignment='top', 
+         bbox=dict(facecolor='white', alpha=0.6))
+plt.legend()
+plt.grid(True)
+plt.show()
